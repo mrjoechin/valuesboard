@@ -1,0 +1,5 @@
+== ValuesBoard
+
+ValuesBoard was created by Joe Chin. The application was created to help capture, highlight, and record interactions that represent the values of a community or team.
+
+The work is on-going so if you have feedback, please do share. 
