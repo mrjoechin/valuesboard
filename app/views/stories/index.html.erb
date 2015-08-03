@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Text</th>
+      <th>Value</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,9 +15,10 @@
     <% @stories.each do |story| %>
       <tr>
         <td><%= story.text %></td>
-        <td><%= link_to 'Show', story %></td>
-        <td><%= link_to 'Edit', edit_story_path(story) %></td>
-        <td><%= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= story.value.name %></td>
+        <td><%= link_to 'Show', story %> | 
+        <%= link_to 'Edit', edit_story_path(story) %> | 
+        <%= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
