@@ -15,4 +15,5 @@
 //= require bootsy
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require custom.js
 //= require_tree .
