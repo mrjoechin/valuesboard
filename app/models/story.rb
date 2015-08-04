@@ -1,3 +1,4 @@
 class Story < ActiveRecord::Base
-	belongs_to :value
+	include Bootsy::Container
+  belongs_to :value
 end

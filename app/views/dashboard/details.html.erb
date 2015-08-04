@@ -5,7 +5,7 @@
   </div> 
   <% @value.stories.each do |s| %>
     <div class="col-xs-12 story">
-      <p><%= s.text %></p>
+      <p><%= s.text.html_safe %></p>
     </div> 
   <% end %>
 </div>

@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  mount Bootsy::Engine => '/bootsy', as: 'bootsy'
   root 'dashboard#index'
   get 'thankyous(/:id)' =>'dashboard#details', as: :thankyous
-  resources :stories
+  resources :stories, only: [] 
   resources :values
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -10,8 +10,8 @@
       </ul>
     </div>
   <% end %>
-  <%= f.text_area :text, label: 'Details:'%>
-  <%= f.select :value_id, options_for_select(Value.all.map{|s|[s.name, s.id]})%>
-  <%= f.submit "Save", :class=>"btn btn-sm btn-primary"%>
-
+    <%= f.bootsy_area :text, hide_label: true, placeholder: "Tell us who and what you are thankful for...", rows: 15, editor_options: { image: false}%>
+    <%= f.select :value_id, options_for_select(Value.all.map{|s|[s.name, s.id]}), label: "Which value does this represent?" %>
+    <%= f.submit "Save", :class=>"btn btn-sm btn-primary"%>
+    <%= link_to 'Back', stories_path, :class=>"btn btn-sm btn-default" %>
 <% end %>
