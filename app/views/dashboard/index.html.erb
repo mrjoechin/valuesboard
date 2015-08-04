@@ -1,8 +1,19 @@
-<div class="row-fluid">
-  <% @values.each do |v| %>
-  <div class="col-xs-3">
-    <h1><%= v.name %></h1>
-    <p><%= v.stories.count %></p>
-  </div>  
-  <% end %>
+<div class="row-fluid value-row">
+    <%= link_to thankyous_url() do %>
+      <div class="col-xs-12 col-sm-6 col-md-4 value-item">
+          <h3>All <small><%= @stories.count %> thank you's</small></h3>
+      </div> 
+    <% end %>
+    <% @values.each do |v| %>
+      <%= link_to thankyous_url(v.id) do %>
+        <div class="col-xs-12 col-sm-6 col-md-4 value-item">
+            <div class="col-xs-12">
+              <h3><%= v.name %> <small><%= v.stories.count %> thank you's</small></h3>
+            </div>
+            <div class="col-xs-12">
+              <p><%= v.description %></p>
+            </div>
+        </div> 
+      <% end %>
+    <% end %>
 </div>

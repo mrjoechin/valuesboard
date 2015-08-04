@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'dashboard#index'
+  get 'thankyous(/:id)' =>'dashboard#details', as: :thankyous
   resources :stories
   resources :values
 

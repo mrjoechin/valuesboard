@@ -1,0 +1,11 @@
+<div class="row-fluid value-row">
+  <div class="col-xs-12">
+      <h3><%=@value.name%><small>
+      <p><%=@value.description%></p>
+  </div> 
+  <% @value.stories.each do |s| %>
+    <div class="col-xs-12 story">
+      <p><%= s.text %></p>
+    </div> 
+  <% end %>
+</div>
