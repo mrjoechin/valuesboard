@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   mount Bootsy::Engine => '/bootsy', as: 'bootsy'
   root 'dashboard#index'
-  get 'thankyous(/:id)' => 'dashboard#details', as: :thankyous
+  get 'details(/:id)' =>'dashboard#details', as: :details
+  resources :dashboard
   resources :stories
   resources :values
 

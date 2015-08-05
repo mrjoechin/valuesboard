@@ -1,7 +1,17 @@
 <div class="row-fluid value-row">
   <div class="col-xs-12">
-      <h3><%=@value.name%><small>
-      <p><%=@value.description%></p>
+    <div class="row">
+      <div class="col-xs-8">
+        <h1><%=@value.name%></h1>
+      </div>
+      <div class="col-xs-4 header-right">
+        <%= link_to '+ Value Story', new_story_path, :class=>"btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12">
+    <p><%=@value.description%></p>
+  </div>
   </div> 
   <% @value.stories.each do |s| %>
     <div class="col-xs-12 story">
