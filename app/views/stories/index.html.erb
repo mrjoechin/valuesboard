@@ -1,40 +1,33 @@
 <div class="row-fluid value-row">
-  <% if !notice.nil? %>
-    <div class="col-xs-12">
-      <div class="alert alert-success alert-dismissable">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <p id="notice"><%= notice.html_safe %></p>
-      </div>
-    </div>
-  <% end %>
-    <div class="col-xs-10">
-      <h1>Value Stories</h1>
-    </div>
-    <div class="col-xs-2">
-      <h2><%= link_to '+ Value Story', new_story_path, :class=>"btn btn-primary" %></h2>
-    </div> 
-    <div class="col-xs-12">
-      <table class="table table-striped">
-        <thead>
-          <col width="10%"></col>
-          <col width="90%"></col>
-          <tr>
-            <th>Actions</th>
-            <th>Story</th>
-          </tr>
-        </thead>
+  <%= bootstrap_flash %>
+  <div class="col-xs-10">
+    <h1>Value Stories</h1>
+  </div>
+  <div class="col-xs-2">
+    <h2><%= link_to '+ Value Story', new_story_path, :class=>"btn btn-primary" %></h2>
+  </div>
+  <div class="col-xs-12">
+    <table class="table table-striped">
+      <thead>
+        <col width="10%"></col>
+        <col width="90%"></col>
+        <tr>
+          <th>Actions</th>
+          <th>Story</th>
+        </tr>
+      </thead>
 
-        <tbody>
-          <% @stories.each do |story| %>
-            <tr>
-              <td>
-                <%= link_to 'Edit', edit_story_path(story) %> | 
-                <%= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' } %>
-              </td>
-              <td><%= story.text.html_safe %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
+      <tbody>
+        <% @stories.each do |story| %>
+          <tr>
+            <td>
+              <%= link_to 'Edit', edit_story_path(story) %> |
+              <%= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </td>
+            <td><%= story.text.html_safe %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>

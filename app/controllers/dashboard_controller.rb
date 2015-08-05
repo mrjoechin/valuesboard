@@ -1,6 +1,6 @@
 class DashboardController < ApplicationController
   def index
-  	@values = Value.includes(:stories)
+    @values = Value.includes(:stories)
     @stories = Story.all
   end
 

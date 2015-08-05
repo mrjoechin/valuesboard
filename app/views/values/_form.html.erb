@@ -4,17 +4,16 @@
       <h2><%= pluralize(@value.errors.count, "error") %> prohibited this value from being saved:</h2>
 
       <ul>
-      <% @value.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% @value.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
-    <%= f.text_field :name %>
-    <%= f.text_area :description%>
-    <%= f.text_field :image %>
-    <%= f.submit "Save", :class=>"btn btn-sm btn-primary"%>
-    <%= link_to 'Back', values_path, :class=>"btn btn-default" %>
-  
+  <%= f.text_field :name %>
+  <%= f.text_area :description%>
+  <%= f.text_field :image %>
+  <%= f.submit "Save", :class=>"btn btn-sm btn-primary"%>
+  <%= link_to 'Back', values_path, :class=>"btn btn-default" %>
 <% end %>

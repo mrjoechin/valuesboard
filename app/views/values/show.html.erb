@@ -1,19 +1,22 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-xs-12">
+    <%= bootstrap_flash %>
+    <p>
+      <strong>Name:</strong>
+      <%= @value.name %>
+    </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @value.name %>
-</p>
+    <p>
+      <strong>Description:</strong>
+      <%= @value.description %>
+    </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @value.description %>
-</p>
+    <p>
+      <strong>Image:</strong>
+      <%= @value.image %>
+    </p>
 
-<p>
-  <strong>Image:</strong>
-  <%= @value.image %>
-</p>
-
-<%= link_to 'Edit', edit_value_path(@value) %> |
-<%= link_to 'Back', values_path %>
+    <%= link_to 'Edit', edit_value_path(@value) %> |
+    <%= link_to 'Back', values_path %>
+  </div>
+</div>

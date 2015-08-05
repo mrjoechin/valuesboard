@@ -44,6 +44,8 @@ GEM
       debug_inspector (>= 0.0.1)
     bootstrap-sass (3.2.0.2)
       sass (~> 3.2)
+    bootstrap-sass-extras (0.0.6)
+      rails (>= 3.1.0)
     bootstrap_form (2.3.0)
     bootsy (2.1.0)
       carrierwave (~> 0.10)
@@ -167,6 +169,7 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   bootstrap-sass
+  bootstrap-sass-extras
   bootstrap_form
   bootsy
   byebug

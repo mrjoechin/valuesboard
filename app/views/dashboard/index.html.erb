@@ -1,26 +1,26 @@
 <div class="row-fluid value-row">
-    <%= link_to thankyous_url() do %>
+  <%= link_to thankyous_url() do %>
+    <div class="col-xs-12 col-sm-6 col-md-4 value-item">
+      <h3>All <small><%= @stories.count %> thank you's</small></h3>
+    </div>
+  <% end %>
+  <% @values.each do |v| %>
+    <%= link_to thankyous_path(v) do %>
       <div class="col-xs-12 col-sm-6 col-md-4 value-item">
-          <h3>All <small><%= @stories.count %> thank you's</small></h3>
-      </div> 
+        <div class="col-xs-12">
+          <h3><%= v.name %> <small><%= v.stories.count %> thank you's</small></h3>
+        </div>
+        <div class="col-xs-12">
+          <p><%= v.description %></p>
+        </div>
+      </div>
     <% end %>
-    <% @values.each do |v| %>
-      <%= link_to thankyous_url(v.id) do %>
-        <div class="col-xs-12 col-sm-6 col-md-4 value-item">
-            <div class="col-xs-12">
-              <h3><%= v.name %> <small><%= v.stories.count %> thank you's</small></h3>
-            </div>
-            <div class="col-xs-12">
-              <p><%= v.description %></p>
-            </div>
-        </div> 
-      <% end %>
-    <% end %>
-<!--     <% @stories.last(10).each do |s| %>
-        <div class="col-xs-12 story-item">
-            <div class="col-xs-12">
-              <p><%= s.text.html_safe %></p>
-            </div>
-        </div> 
-    <% end %> -->
+  <% end %>
+  <% @stories.last(10).each do |s| %>
+    <div class="col-xs-12 story-item">
+      <div class="col-xs-12">
+        <p><%= s.text.html_safe %></p>
+      </div>
+    </div>
+  <% end %>
 </div>
