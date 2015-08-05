@@ -8,28 +8,31 @@
 </head>
   <body>
     <div class="container-fluid">
-      <div class="col-xs-2">
-        <nav class="bs-docs-sidebar">
-          <ul class="nav bs-docs-sidebar">
-            <li><a href="<%= root_path %>">Dashboard</a></li>
-            <li>
-              <a href="<%= stories_path %>">Stories</a>
-              <ul class="nav">
-                <li><a href="<%= new_story_path %>">Create New Story</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="<%= values_path %>">Values</a>
-              <ul class="nav">
-                <li><a href="<%= new_value_path %>">Create New Value</a></li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <div class="col-xs-10">
-        <%= yield %>
-      </div>
+<!--       <div class="row">
+        <div class="col-xs-2">
+          <nav class="bs-docs-sidebar">
+            <ul class="nav bs-docs-sidebar">
+              <li><a href="<%= root_path %>">Dashboard</a></li>
+              <li>
+                <a href="<%= stories_path %>">Stories</a>
+                <ul class="nav">
+                  <li><a href="<%= new_story_path %>">Create New Story</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="<%= values_path %>">Values</a>
+                <ul class="nav">
+                  <li><a href="<%= new_value_path %>">Create New Value</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="col-xs-10"> -->
+          <%= render_breadcrumbs %>
+          <%= yield %>
+<!--         </div>
+      </div> -->
     </div>
   </body>
 </html>

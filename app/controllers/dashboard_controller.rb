@@ -1,4 +1,5 @@
 class DashboardController < ApplicationController
+
   def index
     @values = Value.includes(:stories)
     @stories = Story.all
@@ -6,5 +7,6 @@ class DashboardController < ApplicationController
 
   def details
     @value = Value.find(params[:id])
+    add_breadcrumb @value.name, details_path(@value)
   end
 end
