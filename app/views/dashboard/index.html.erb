@@ -5,7 +5,7 @@
     </div>
   <% end %>
   <% @values.each do |v| %>
-    <%= link_to thankyous_url(v.id) do %>
+    <%= link_to thankyous_path(v) do %>
       <div class="col-xs-12 col-sm-6 col-md-4 value-item">
         <div class="col-xs-12">
           <h3><%= v.name %> <small><%= v.stories.count %> thank you's</small></h3>
