@@ -1,29 +1,19 @@
-<%= form_for(@value ) do |f| %>
+<%= bootstrap_form_for(@value) do |f| %>
   <% if @value.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@value.errors.count, "error") %> prohibited this value from being saved:</h2>
 
       <ul>
-      <% @value.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% @value.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= f.label :name %><br>
-    <%= f.text_field :name, class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :description %><br>
-    <%= f.text_area :description, class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :image %><br>
-    <%= f.text_field :image, class: "form-control" %>
-  </div>
-  <div class="actions">
-    <%= f.submit class: "btn btn-default" %>
-  </div>
+  <%= f.text_field :name %>
+  <%= f.text_area :description%>
+  <%= f.text_field :image %>
+  <%= f.submit "Save", :class=>"btn btn-sm btn-primary"%>
+  <%= link_to 'Back', values_path, :class=>"btn btn-default" %>
 <% end %>

@@ -1,3 +1,16 @@
 // Place all the styles related to the dashboard controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.value-row {
+  margin-top: 15px;
+}
+
+.value-item {
+  background-color: #ececec;
+}
+
+[class*="col-"] {
+    background-clip: padding-box;
+    border: 5px solid transparent;
+}

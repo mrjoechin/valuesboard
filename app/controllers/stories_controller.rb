@@ -28,7 +28,7 @@ class StoriesController < ApplicationController
 
     respond_to do |format|
       if @story.save
-        format.html { redirect_to @story, notice: 'Story was successfully created.' }
+        format.html { redirect_to stories_path, notice: "<strong>Well done!</strong> The value story was successfully updated." }
         format.json { render :show, status: :created, location: @story }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class StoriesController < ApplicationController
   def update
     respond_to do |format|
       if @story.update(story_params)
-        format.html { redirect_to @story, notice: 'Story was successfully updated.' }
+        format.html { redirect_to stories_path, notice: "<strong>Well done!</strong> That value story was successfully updated." }
         format.json { render :show, status: :ok, location: @story }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class StoriesController < ApplicationController
   def destroy
     @story.destroy
     respond_to do |format|
-      format.html { redirect_to stories_url, notice: 'Story was successfully destroyed.' }
+      format.html { redirect_to stories_url, notice: "<strong>Boom!</strong> That value story is gone for good." }
       format.json { head :no_content }
     end
   end
@@ -69,6 +69,6 @@ class StoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def story_params
-      params.require(:story).permit(:text,:value_id)
+      params.require(:story).permit(:text,:value_id, :bootsy_image_gallery_id)
     end
 end
