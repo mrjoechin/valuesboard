@@ -53,4 +53,6 @@ group :development, :test do
   gem 'spring'
 end
 
+gem 'bootstrap-sass-extras'
+
 ruby "2.2.2"

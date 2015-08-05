@@ -13,13 +13,13 @@
 
   <div class="form-group">
     <%= f.label :text %><br>
-    <%= f.text_area :text, :rows=>"3" %>
+    <%= f.text_area :text, class: "form-control", rows: 3 %>
   </div>
   <div class="form-group">
     <%= f.label :value %><br />
-    <%= f.select :value_id, options_for_select(Value.all.map{|s|[s.name, s.id]}) %>
+    <%= f.select :value_id, options_for_select(Value.all.map{|s|[s.name, s.id]}), {}, class: "form-control" %>
   </div>
 
-    <%= f.submit "Save", :class=>"btn btn-small btn-primary"%>
+    <%= f.submit "Save", class: "btn btn-small btn-primary"%>
 
 <% end %>
