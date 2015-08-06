@@ -5,20 +5,26 @@ class ValuesController < ApplicationController
   # GET /values.json
   def index
     @values = Value.all
+    add_breadcrumb "Values", values_path
   end
 
   # GET /values/1
   # GET /values/1.json
   def show
+    @value = Value.find(params[:id])
+    add_breadcrumb @value.name, value_path(@value)
   end
 
   # GET /values/new
   def new
     @value = Value.new
+    add_breadcrumb "New Value"
   end
 
   # GET /values/1/edit
   def edit
+    @value = Value.find(params[:id])
+    add_breadcrumb 'Editing "'+@value.name+'"', value_path(@value)
   end
 
   # POST /values

@@ -5,20 +5,26 @@ class StoriesController < ApplicationController
   # GET /stories.json
   def index
     @stories = Story.all
+    add_breadcrumb "Stories", stories_path
   end
 
   # GET /stories/1
   # GET /stories/1.json
   def show
+    @story = Value.find(params[:id])
+    add_breadcrumb "Story Details", story_path(@stories)
   end
 
   # GET /stories/new
   def new
     @story = Story.new
+    add_breadcrumb "Sharing a new Story"
   end
 
   # GET /stories/1/edit
   def edit
+    @story = Story.find(params[:id])
+    add_breadcrumb "Edit Story", story_path(@story) 
   end
 
   # POST /stories
