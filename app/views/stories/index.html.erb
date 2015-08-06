@@ -10,9 +10,11 @@
     <table class="table table-striped">
       <thead>
         <col width="10%"></col>
-        <col width="90%"></col>
+        <col width="20%"></col>
+        <col width="70%"></col>
         <tr>
           <th>Actions</th>
+          <th>Value</th>
           <th>Story</th>
         </tr>
       </thead>
@@ -24,6 +26,7 @@
               <%= link_to 'Edit', edit_story_path(story) %> |
               <%= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' } %>
             </td>
+            <td><%= story.value.name %></td>
             <td><%= story.text.html_safe %></td>
           </tr>
         <% end %>
