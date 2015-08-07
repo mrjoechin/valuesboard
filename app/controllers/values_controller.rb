@@ -18,7 +18,7 @@ class ValuesController < ApplicationController
   # GET /values/new
   def new
     @value = Value.new
-    add_breadcrumb "New Value"
+    add_breadcrumb "Adding a new Value"
   end
 
   # GET /values/1/edit
