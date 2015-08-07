@@ -11,9 +11,11 @@
       <thead>
         <col width="10%"></col>
         <col width="15%"></col>
+        <col width="15%"></col>
         <col width="75%"></col>
         <tr>
           <th>Actions</th>
+          <th>Image</th>
           <th>Value</th>
           <th>Description</th>
         </tr>
@@ -25,6 +27,7 @@
               <%= link_to 'Edit', edit_value_path(value) %> |
               <%= link_to 'Destroy', value, method: :delete, data: { confirm: 'Are you sure?' } %>
             </td>
+            <td><%= image_tag(value.image.to_s) %></td>
             <td><%= value.name %></td>
             <td><%= value.description.html_safe %></td>
           </tr>

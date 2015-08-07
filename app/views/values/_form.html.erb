@@ -1,4 +1,4 @@
-<%= bootstrap_form_for(@value) do |f| %>
+<%= bootstrap_form_for @value, :html=>{:multipart=>true} do |f| %>
   <% if @value.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@value.errors.count, "error") %> prohibited this value from being saved:</h2>
@@ -13,7 +13,9 @@
 
   <%= f.text_field :name %>
   <%= f.text_area :description%>
-  <%= f.text_field :image %>
+  <%= f.label :image%><br/>
+  <%= image_tag (@value.image.to_s) %>
+  <%= f.file_field :image, hide_label: true %> 
   <%= f.submit "Save", :class=>"btn btn-sm btn-primary"%>
   <%= link_to 'Back', values_path, :class=>"btn btn-default" %>
 <% end %>
