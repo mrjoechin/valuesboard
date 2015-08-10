@@ -3,8 +3,15 @@
   <% @values.each_with_index do |v, i| %>
     <%= link_to details_path(v) do %>
       <div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2 value-item">
-        <h3><%= v.name %> <small><%= v.stories.count %> stories</small></h3>
-        <p><%= v.description %></p>
+        <div class="row"> 
+          <div class="col-xs-3" style="background: url(<%= attachment_url(v, :image)%>) no-repeat center center">
+            <br/><br/><br/><br/><br/><br/><br/>
+          </div>
+          <div class="col-xs-9">
+            <h3><%= v.name %> <small><%= v.stories.count %> stories</small></h3>
+            <p><%= v.description %></p>
+          </div>
+        </div>
       </div>
     <% end %>
   <% end %>

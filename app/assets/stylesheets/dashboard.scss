@@ -3,7 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .value-item {
-  background-color: #ececec;
+  background-color: #1d3461;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+  margin-bottom: 20px;
+  padding: 10px 0px 15px 0px;
+  color:#fff
+}
+
+.value-item-logo{
+  margin:auto;
+  display: block;
 }
 
 div.details-header{
@@ -23,9 +32,4 @@ div.details-header{
 .header-right{
   padding-top:20px;
   text-align:right;
-}
-
-[class*="col-"] {
-    background-clip: padding-box;
-    border: 10px solid transparent;
 }
