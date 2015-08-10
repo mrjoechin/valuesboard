@@ -1,25 +1,10 @@
 <div class="row value-row">
-  <div class="col-xs-12 col-sm-6 col-md-4 value-item">
-    <div class="row">
-      <div class="col-xs-12">
-        <h3>Evisions <small><%= @stories.count %> stories</small></h3>
-      </div>
-      <div class="col-xs-12">
-        <p><strong>Purpose</strong> To create innovative software that will enhance and advance society</p>
-      </div>
-    </div>
-  </div>
-  <% @values.each do |v| %>
+  <%= render_breadcrumbs %>
+  <% @values.each_with_index do |v, i| %>
     <%= link_to details_path(v) do %>
-      <div class="col-xs-12 col-sm-6 col-md-4 value-item">
-        <div class="row">
-          <div class="col-xs-12">
-            <h3><%= v.name %> <small><%= v.stories.count %> stories</small></h3>
-          </div>
-          <div class="col-xs-12">
-            <p><%= v.description %></p>
-          </div>
-        </div>
+      <div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2 value-item">
+        <h3><%= v.name %> <small><%= v.stories.count %> stories</small></h3>
+        <p><%= v.description %></p>
       </div>
     <% end %>
   <% end %>
