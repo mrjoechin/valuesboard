@@ -1,4 +1,5 @@
 class DashboardController < ApplicationController
+  layout 'dashboard'
 
   def index
     @values = Value.includes(:stories)

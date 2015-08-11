@@ -4,7 +4,7 @@ class StoriesController < ApplicationController
   # GET /stories
   # GET /stories.json
   def index
-    @stories = Story.all
+    @stories = Story.all.order(created_at: :desc)
     add_breadcrumb "Stories", stories_path
   end
 

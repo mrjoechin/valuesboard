@@ -7,8 +7,39 @@
   <%= csrf_meta_tags %>
 </head>
   <body>
-    <div class="container-fluid">
-      <%= yield %>
+    <div id="wrapper">
+      <!-- Sidebar -->
+      <div id="sidebar-wrapper">
+          <ul class="sidebar-nav">
+              <li class="sidebar-brand">
+                  <a href="#">
+                    VSB
+                  </a>
+              </li>
+              <li class="<%= 'active' if params[:controller] == 'dashboard' %>">
+                <%= link_to "Dashboard", root_path %>
+              </li>
+              <li class="<%= 'active' if params[:controller] == 'values' %>">
+                <%= link_to "Values", values_path %>
+              </li>
+              <li class="<%= 'active' if params[:controller] == 'stories' %>">
+                <%= link_to "Stories", stories_path %>
+              </li>
+          </ul>
+      </div>
+      <!-- /#sidebar-wrapper -->
+      <!-- Page Content -->
+      <div id="page-content-wrapper">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xs-12">
+              <%= yield %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /#page-content-wrapper -->
     </div>
+    <!-- /#wrapper -->
   </body>
 </html>

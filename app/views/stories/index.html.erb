@@ -12,11 +12,13 @@
       <thead>
         <col width="10%"></col>
         <col width="20%"></col>
-        <col width="70%"></col>
+        <col width="60%"></col>
+        <col width="10%"></col>
         <tr>
           <th>Actions</th>
           <th>Value</th>
           <th>Story</th>
+          <th>Created</th>
         </tr>
       </thead>
 
@@ -29,6 +31,7 @@
             </td>
             <td><%= story.value.name %></td>
             <td><%= story.text.html_safe %></td>
+            <td><%= story.created_at %></td>
           </tr>
         <% end %>
       </tbody>

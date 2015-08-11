@@ -4,7 +4,7 @@ class ValuesController < ApplicationController
   # GET /values
   # GET /values.json
   def index
-    @values = Value.all
+    @values = Value.all.order(:id)
     add_breadcrumb "Values", values_path
   end
 
