@@ -4,7 +4,7 @@
     <%= link_to details_path(v) do %>
       <div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2 value-item">
         <div class="row"> 
-          <div class="col-xs-3" style="background: url(<%= attachment_url(v, :image)%>) no-repeat center center">
+          <div class="col-xs-3" style="background: url(<%= attachment_url(v, :image, format: v.image_content_type)%>) no-repeat center center">
             <br/><br/><br/><br/><br/><br/><br/>
           </div>
           <div class="col-xs-9">
