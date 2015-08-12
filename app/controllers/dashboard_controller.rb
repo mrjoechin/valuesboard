@@ -2,7 +2,7 @@ class DashboardController < ApplicationController
   layout 'dashboard'
 
   def index
-    @values = Value.includes(:stories)
+    @values = Value.includes(:stories).order(:id)
     @stories = Story.all
   end
 
