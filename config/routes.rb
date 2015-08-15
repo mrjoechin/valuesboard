@@ -2,9 +2,10 @@ Rails.application.routes.draw do
   mount Bootsy::Engine => '/bootsy', as: 'bootsy'
   root 'dashboard#index'
   get 'details(/:id)' =>'dashboard#details', as: :details
-  resources :dashboard
+
   resources :stories
   resources :values
+  resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

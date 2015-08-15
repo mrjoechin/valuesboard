@@ -1,0 +1,39 @@
+<%= render_breadcrumbs %>
+<div class="row-fluid user-row">
+  <%= bootstrap_flash %>
+  <div class="col-xs-9">
+    <h1>Users</h1>
+  </div>
+  <div class="col-xs-3 ">
+    <h2><%= link_to '+ New Value', new_user_path, :class=>"btn btn-primary"%></h2>
+  </div>
+  <div class="col-xs-12">
+    <table class="table table-striped">
+      <thead>
+        <col width="10%"></col>
+        <col width="15%"></col>
+        <col width="15%"></col>
+        <col width="60%"></col>
+        <tr>
+          <th>Actions</th>
+          <th>Full Name</th>
+          <th>Nickname</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td>
+              <%= link_to 'Edit', edit_user_path(user) %> |
+              <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </td>
+            <td><%= link_to user.full_name, user_path(user) %></td>
+            <td><%= user.nickname %></td>
+            <td><%= mail_to(user.email) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
