@@ -6,6 +6,10 @@ class UsersController < ApplicationController
   def index
     @users = User.all
     add_breadcrumb "Users", users_path
+    respond_to do |format|
+      format.html
+      format.csv{ send_data @users.to_csv }
+    end
   end
 
   # GET /users/1
@@ -25,6 +29,12 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
     add_breadcrumb "Manage User", user_path(@user)
+  end
+
+  # POST /Users
+  def import
+    User.import(params[:file])
+    redirect_to users_path, notice: "Users imported."
   end
 
   # POST /users
