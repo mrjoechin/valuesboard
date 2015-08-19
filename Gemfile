@@ -16,6 +16,9 @@ gem "refile", require: "refile/rails"
 gem "refile-s3"
 gem "refile-mini_magick"
 
+gem 'jquery-atwho-rails'
+gem 'bootstrap-wysihtml5-rails'
+
 gem 'rmagick'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

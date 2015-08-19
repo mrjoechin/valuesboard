@@ -16,4 +16,5 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require custom.js
+//= require jquery.atwho
 //= require_tree .

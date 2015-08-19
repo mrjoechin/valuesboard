@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     add_breadcrumb "Users", users_path
     respond_to do |format|
       format.html
+      format.json
       format.csv{ send_data @users.to_csv }
     end
   end
