@@ -19,12 +19,14 @@ class StoriesController < ApplicationController
   def new
     @story = Story.new
     add_breadcrumb "Sharing a new Story"
+    render layout: 'dashboard'
   end
 
   # GET /stories/1/edit
   def edit
     @story = Story.find(params[:id])
     add_breadcrumb "Edit Story", story_path(@story) 
+    render layout: 'dashboard'
   end
 
   # POST /stories
@@ -34,10 +36,10 @@ class StoriesController < ApplicationController
 
     respond_to do |format|
       if @story.save
-        format.html { redirect_to stories_path, notice: "<strong>Well done!</strong> The value story was successfully updated." }
+        format.html { redirect_to details_path(@story.value_id), notice: "<strong>Well done!</strong> The value story was successfully updated." }
         format.json { render :show, status: :created, location: @story }
       else
-        format.html { render :new }
+        format.html { render :new, layout: 'dashboard' }
         format.json { render json: @story.errors, status: :unprocessable_entity }
       end
     end
@@ -51,7 +53,7 @@ class StoriesController < ApplicationController
         format.html { redirect_to stories_path, notice: "<strong>Well done!</strong> That value story was successfully updated." }
         format.json { render :show, status: :ok, location: @story }
       else
-        format.html { render :edit }
+        format.html { render :edit, layout: 'dashboard' }
         format.json { render json: @story.errors, status: :unprocessable_entity }
       end
     end

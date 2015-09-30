@@ -1,7 +1,7 @@
 <%= bootstrap_form_for(@story) do |f| %>
   <% if @story.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@story.errors.count, "error") %> prohibited this story from being saved:</h2>
+    <div class="alert alert-danger" id="error_explanation">
+      <h4><%= pluralize(@story.errors.count, "error") %> prohibited this story from being saved:</h4>
 
       <ul>
       <% @story.errors.full_messages.each do |message| %>
@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-  <%= f.bootsy_area :text, hide_label: true, placeholder: "Tell us who and what you are thankful for...", rows: 15%>
+  <%= f.bootsy_area :text, hide_label: true, placeholder: "Tell us who and what you are thankful for...", rows: 15, data: {behavior: "autocomplete"} %>
   <%= f.select :value_id, options_for_select(Value.all.map{|s|[s.name, s.id]}, @story.value_id), label: "Which value does this represent?" %>
   <%= f.submit "Save", :class=>"btn btn-sm btn-primary"%>
   <%= link_to 'Back', stories_path, :class=>"btn btn-sm btn-default" %>
